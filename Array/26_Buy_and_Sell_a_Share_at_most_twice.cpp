@@ -19,12 +19,7 @@ using namespace std;
 //     for (int i = 0; i < n; i++)
 //         profit[i] = 0;
 
-//     /* Get the maximum profit with
-//     only one transaction
-//     allowed. After this loop,
-//     profit[i] contains maximum
-//     profit from price[i..n-1]
-//     using at most one trans. */
+//     /* Get the maximum profit with only one transaction allowed. After this loop, profit[i] contains maximum profit from price[i..n-1] using at most one trans. */
 //     int max_price = price[n - 1];
 //     for (int i = n - 2; i >= 0; i--)
 //     {
@@ -50,8 +45,7 @@ using namespace std;
 //         // Maximum profit is maximum of:
 //         // a) previous maximum, i.e., profit[i-1]
 //         // b) (Buy, Sell) at (min_price, price[i]) and add profit of other trans. stored in profit[i]
-//         profit[i] = max(profit[i - 1],
-//                         profit[i] + (price[i] - min_price));
+//         profit[i] = max(profit[i - 1], profit[i] + (price[i] - min_price));
 //     }
 //     int result = profit[n - 1];
 

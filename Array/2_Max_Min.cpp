@@ -5,6 +5,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Maximum and minimum of an array using Linear search:
+
+// Initialize values of min and max as minimum and maximum of the first two elements respectively. Starting from 3rd, compare each element with max and min, and change max and min accordingly (i.e., if the element is smaller than min then change min, else if the element is greater than max then change max, else ignore the element) 
+
+// Time Complexity: O(n)
+// Auxiliary Space: O(1) as no extra space was needed.
+// In this method, the total number of comparisons is 1 + 2(n-2) in the worst case and 1 + n – 2 in the best case. 
+
+// Maximum and minimum of an array using the tournament method:
+
+// Divide the array into two parts and compare the maximums and minimums of the two parts to get the maximum and the minimum of the whole array.
+
+// Time Complexity: O(n)
+// Auxiliary Space: O(log n) as the stack space will be filled for the maximum height of the tree formed during recursive calls same as a binary tree.
+// The approach does 3n/2 -2 comparisons if n is a power of 2. And it does more than 3n/2 -2 comparisons if n is not a power of 2.
+
+// Maximum and minimum of an array by comparing in pairs:
+
+// If n is odd then initialize min and max as the first element. 
+// If n is even then initialize min and max as minimum and maximum of the first two elements respectively. 
+// For the rest of the elements, pick them in pairs and compare their 
+// maximum and minimum with max and min respectively. 
+
 // Time Complexity : O(n)
 // Auxiliary Space : O(1) as no extra space was needed.
 // If n is odd:    3*(n-1)/2
@@ -34,7 +57,7 @@ int findSum(int arr[], int n)
         max_ele = arr[0];
         i = 1;
     }
-    while (i < n)
+    while (i < n - 1)
     {
         if (arr[i] > arr[i + 1])
         {

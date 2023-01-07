@@ -9,6 +9,7 @@ const int N = 1e6 + 7;
 int arr[N];
 
 // Time Complexity : O(n)
+// Auxiliary Space : O(1)
 void reverse_arr(int start, int end)
 {
     if (start >= end)

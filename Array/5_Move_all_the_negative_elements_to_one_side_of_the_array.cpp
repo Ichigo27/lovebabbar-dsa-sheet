@@ -6,9 +6,11 @@
 using namespace std;
 
 // Naive approach: The idea is to sort the array of elements, this will make sure that all the negative elements will come before all the positive elements.
+// Time Complexity: O(n*log(n)), Where n is the length of the given array.
+// Auxiliary Space: O(n)
 
 // Efficient Approach 1:
-// The idea is to simply apply the partition process of quicksort. 
+// The idea is to simply apply the partition process of quicksort (quickselect). 
 // Time complexity: O(N) 
 // Auxiliary Space: O(1)
 void quicksort(vector<int> &a)

@@ -25,15 +25,15 @@ int getMinDiff(int arr[], int n, int k)
 {
     sort(arr, arr + n);
     int ans = arr[n - 1] - arr[0];
-    int smallest = arr[0] + k;
-    int largest = arr[n - 1] - k;
+    int smallest = arr[0];
+    int largest = arr[n - 1];
     for (int i = 1; i < n; i++)
     {
-        int temp1 = max(arr[i - 1] + k, largest);
-        int temp2 = min(arr[i] - k, smallest);
-        if (temp2 < 0)
+        if (arr[i] - k < 0)
             continue;
-        ans = min(ans, temp1 - temp2);
+        int smallest = min(arr[0] + k, arr[i] - k);
+        int largest = max(arr[i - 1] + k, arr[n - 1] - k);
+        ans = min(ans, largest - smallest);
     }
     return ans;
 }

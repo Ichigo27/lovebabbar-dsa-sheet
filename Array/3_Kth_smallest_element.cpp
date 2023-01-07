@@ -5,9 +5,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Sorting the array will be : O(n log n)
-// Max heap solution will be : O(n log k) - https://www.youtube.com/watch?v=4BfL2Hjvh8g
-// Only solution that results in O(n) is Quick Select - https://www.youtube.com/watch?v=BP7GCALO2v8
+// K’th smallest element in an unsorted array using sorting:
+// Time Complexity: O(N log N)
+// Auxiliary Space: O(1) 
+
+// K’th smallest element in an unsorted array using heap data structure:
+// https://www.youtube.com/watch?v=4BfL2Hjvh8g
+// Time Complexity : O(n log k)
+// // Auxiliary Space: O(k) 
+
+// K’th smallest element in an unsorted array using QuickSelect:
+// https://www.youtube.com/watch?v=BP7GCALO2v8
+// Time Complexity: O(N^2) in worst case and O(N) on average 
+// Auxiliary Space: O(1)
 
 int quick_select(int arr[], int start, int end, int pivot, int k)
 {

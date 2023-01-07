@@ -5,6 +5,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time Complexity : O(N log(N !)), where O(N) is for loop and O(log N!) is for nested while loop
+// Auxiliary Space: O(max(digits in factorial))
 vector<int> factorial(int N)
 {
     int index = 0;

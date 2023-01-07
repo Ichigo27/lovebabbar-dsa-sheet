@@ -1,4 +1,4 @@
-// 25 Given an array of size n and a number k, fin all elements that appear more than " n/k " times.
+// 25 Given an array of size n and a number k, find all elements that appear more than " n/k " times.
 
 // Given an array arr[] of size N and an element k. The task is to find all elements in array that appear more than n/k times.
 
@@ -36,8 +36,8 @@ int countOccurence(int arr[], int n, int k)
 	int check = n / k;
 	int mc = arr[0];
 	unordered_map<int, pair<int, int>> counts;
-	for (int i = 0; i < n; i++)
-		counts[arr[i]] = {-1, 0};
+	for (int i = 0; i < k - 1; i++)
+		counts[i] = {-1, 0};
 	for (int i = 0; i < n; i++)
 	{
 		int j;

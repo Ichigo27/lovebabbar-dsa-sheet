@@ -5,6 +5,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Method 1 (Using Set):
+// Time Complexity: O(m * log(m) + n * log(n))
+// Auxiliary Space: O(m + n)
+
+// Method 2: We can improve performance of getUnion method by iterating over both the arrays for index from 0 to min(n, m)-1 adding all the elements in both the arrays to the set, and then iterate over the other array with the remaining elements and add them to the set.
+// Time Complexity: O( max(m,n) )
+// Auxiliary Space: O(max(m, n))
+
+// Method 2: (Using map data structure)
 // Time Complexity : O(m + n)
 // Auxiliary Space : O(m + n)
 int doUnion(int a[], int n, int b[], int m)
