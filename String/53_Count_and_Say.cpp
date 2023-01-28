@@ -10,6 +10,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time Complexity: O(N^2)
+// Space Complexity: O(N)
 string countAndSay(int n)
 {
     if (n == 1)
