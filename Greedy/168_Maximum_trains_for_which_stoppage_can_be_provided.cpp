@@ -10,28 +10,19 @@ using namespace std;
 int maxStop(int n, int m, vector<vector<int>> &trains)
 {
     int res = 0;
-    vector<vector<pair<int, int>>> platforms(n + 1);
+    vector<pair<int, int>> v(m);
+    vector<int> plaform(n + 1, 0);
     for (int i = 0; i < m; i++)
     {
-        platforms[trains[i][2]].push_back({trains[i][1], trains[i][0]});
+        v[i] = {trains[i][1], i};
     }
-    for (int i = 1; i <= n; i++)
+    sort(v.begin(), v.end());
+    for (int i = 0; i < m; i++)
     {
-        if (platforms[i].empty())
-            continue;
-
-        sort(platforms[i].begin(), platforms[i].end());
-
-        res++;
-        int prevIdx = 0;
-
-        for (int j = 1; j < platforms[i].size(); j++)
+        if (plaform[trains[v[i].second][2]] <= trains[v[i].second][0])
         {
-            if (platforms[i][prevIdx].first <= platforms[i][j].second)
-            {
-                prevIdx = j;
-                res++;
-            }
+            plaform[trains[v[i].second][2]] = v[i].first;
+            res++;
         }
     }
     return res;
