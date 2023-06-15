@@ -10,6 +10,7 @@
 using namespace std;
 
 // DFS
+// https://www.youtube.com/watch?v=1cSzxlhxOw8
 // Time Complexity: O(V + E), the Time Complexity of this method is the same as the time complexity of DFS traversal which is O(V+E).
 // Auxiliary Space: O(V). To store the visited and recursion stack O(V) space is needed.
 bool solve(int vertex, vector<int> &visited, vector<int> &order, vector<int> adj[])
@@ -32,7 +33,6 @@ bool solve(int vertex, vector<int> &visited, vector<int> &order, vector<int> adj
 
 bool isCyclic(int V, vector<int> adj[])
 {
-    // code here
     vector<int> visited(V, 0);
     vector<int> order(V, 0);
     for (int i = 0; i < V; i++)
@@ -44,6 +44,46 @@ bool isCyclic(int V, vector<int> adj[])
         }
     }
     return false;
+}
+
+// Kahn's Algorithm
+// https://www.youtube.com/watch?v=X2_tYUuthH8
+// Time Complexity: O(V+E)
+// Space Complexity: O(V)
+bool isCyclic(int V, vector<int> adj[])
+{
+    vector<int> indegree(V, 0);
+    for (int i = 0; i < V; i++)
+    {
+        for (auto it : adj[i])
+        {
+            indegree[it]++;
+        }
+    }
+    queue<int> q;
+    for (int i = 0; i < V; i++)
+    {
+        if (indegree[i] == 0)
+        {
+            q.push(i);
+        }
+    }
+    int count = 0;
+    while (!q.empty())
+    {
+        int curr = q.front();
+        q.pop();
+        count++;
+        for (auto it : adj[curr])
+        {
+            indegree[it]--;
+            if (indegree[it] == 0)
+            {
+                q.push(it);
+            }
+        }
+    }
+    return count != V;
 }
 
 int main()

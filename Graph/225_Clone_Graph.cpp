@@ -40,8 +40,10 @@ public:
     }
 };
 
+
 // Time complexity: O(V + E)
 // Space complexity: O(V)
+
 
 // bfs
 Node *cloneGraph(Node *node)
@@ -72,6 +74,7 @@ Node *cloneGraph(Node *node)
 }
 
 // dfs
+// https://www.youtube.com/watch?v=mQeF6bN8hMk
 Node *cloneGraph(Node *node)
 {
     if(node == NULL)
