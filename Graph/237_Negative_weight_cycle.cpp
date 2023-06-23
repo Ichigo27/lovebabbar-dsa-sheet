@@ -6,6 +6,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Using Bellman Ford Algorithm
 // time complexity: O(V*E)
 // space complexity: O(V)
 int isNegativeWeightCycle(int n, vector<vector<int>> edges)
