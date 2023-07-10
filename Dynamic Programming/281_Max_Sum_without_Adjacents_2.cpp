@@ -1,4 +1,4 @@
-// 281
+// 281 Maximum subsequence sum such that no three are consecutive
 
 // Given an aay Arr of size N containing positive integers.Find the maximumdp that can be formed which has no three consecutive elements present.
 

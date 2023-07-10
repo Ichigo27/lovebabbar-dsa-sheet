@@ -1,4 +1,4 @@
-// 280
+// 280 Longest subsequence such that difference between adjacent is one
 
 // Given an array Arr of size N containing positive integers. Find the maximum sum of a subsequence such that no two numbers in the sequence should be adjacent in the array.
 
