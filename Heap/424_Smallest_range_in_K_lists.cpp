@@ -72,8 +72,12 @@ int main()
     cin >> n >> k;
     int KSortedArray[k][N];
     for (int i = 0; i < k; ++i)
+    {
         for (int j = 0; j < n; ++j)
+        {
             cin >> KSortedArray[i][j];
-    pair<int, int> range = findSmallestRange(KSortedArray, n, k);
+        }
+    }
+    pair<int, int> range = findSmallestRange(KSortedArray, k, n);
     cout << range.first << " " << range.second << endl;
 }
